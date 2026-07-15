@@ -31,7 +31,7 @@ func (a *OnebotAdapter) Init(ctx *core.SystemContext) error {
 
 	a.bot = Pichubot.NewBot()
 	a.bot.Config = Pichubot.Config{
-		Loglvl:   Pichubot.LOGGER_LEVEL_INFO,
+		Loglvl:   Pichubot.LOGGER_LEVEL_EMERGENCY,
 		Host:     a.conf.Host,
 		Path:     a.conf.Path,
 		MsgAwait: a.conf.MsgAwait,
