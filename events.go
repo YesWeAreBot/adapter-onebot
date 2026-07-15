@@ -41,7 +41,7 @@ func (a *OnebotAdapter) handleGroupMsg(event Pichubot.MessageGroup) {
 		"message":    event.Message,
 		"raw_event":  event,
 	}
-	a.ctx.Events.Publish("adapter.message", payload)
+	a.ctx.Events.Publish("adapter.raw.message", payload)
 }
 
 // 处理私聊消息
@@ -56,7 +56,7 @@ func (a *OnebotAdapter) handlePrivateMsg(event Pichubot.MessagePrivate) {
 		"message":    event.Message,
 		"raw_event":  event,
 	}
-	a.ctx.Events.Publish("adapter.message", payload)
+	a.ctx.Events.Publish("adapter.raw.message", payload)
 }
 
 func (a *OnebotAdapter) handleGroupUpload(event Pichubot.GroupUpload) {
@@ -70,7 +70,7 @@ func (a *OnebotAdapter) handleGroupUpload(event Pichubot.GroupUpload) {
 		"file":       event.File, // 包含 Id, Name, Size, Busid
 		"raw_event":  event,
 	}
-	a.ctx.Events.Publish("adapter.message", payload)
+	a.ctx.Events.Publish("adapter.raw.message", payload)
 }
 
 func (a *OnebotAdapter) handleGroupAdmin(event Pichubot.GroupAdmin) {
@@ -84,7 +84,7 @@ func (a *OnebotAdapter) handleGroupAdmin(event Pichubot.GroupAdmin) {
 		"sub_type":   event.SubType, // set / unset
 		"raw_event":  event,
 	}
-	a.ctx.Events.Publish("adapter.message", payload)
+	a.ctx.Events.Publish("adapter.raw.message", payload)
 }
 
 func (a *OnebotAdapter) handleGroupDecrease(event Pichubot.GroupDecrease) {
@@ -99,7 +99,7 @@ func (a *OnebotAdapter) handleGroupDecrease(event Pichubot.GroupDecrease) {
 		"sub_type":    event.SubType, // leave / kick / kick_me
 		"raw_event":   event,
 	}
-	a.ctx.Events.Publish("adapter.message", payload)
+	a.ctx.Events.Publish("adapter.raw.message", payload)
 }
 
 func (a *OnebotAdapter) handleGroupIncrease(event Pichubot.GroupIncrease) {
@@ -114,7 +114,7 @@ func (a *OnebotAdapter) handleGroupIncrease(event Pichubot.GroupIncrease) {
 		"sub_type":    event.SubType, // approve / invite
 		"raw_event":   event,
 	}
-	a.ctx.Events.Publish("adapter.message", payload)
+	a.ctx.Events.Publish("adapter.raw.message", payload)
 }
 
 func (a *OnebotAdapter) handleGroupBan(event Pichubot.GroupBan) {
@@ -130,7 +130,7 @@ func (a *OnebotAdapter) handleGroupBan(event Pichubot.GroupBan) {
 		"duration":    event.Duration,
 		"raw_event":   event,
 	}
-	a.ctx.Events.Publish("adapter.message", payload)
+	a.ctx.Events.Publish("adapter.raw.message", payload)
 }
 
 func (a *OnebotAdapter) handleFriendAdd(event Pichubot.FriendAdd) {
@@ -142,7 +142,7 @@ func (a *OnebotAdapter) handleFriendAdd(event Pichubot.FriendAdd) {
 		"self_id":    event.SelfId,
 		"raw_event":  event,
 	}
-	a.ctx.Events.Publish("adapter.message", payload)
+	a.ctx.Events.Publish("adapter.raw.message", payload)
 }
 
 func (a *OnebotAdapter) handleGroupRecall(event Pichubot.GroupRecall) {
@@ -157,7 +157,7 @@ func (a *OnebotAdapter) handleGroupRecall(event Pichubot.GroupRecall) {
 		"message_id":  event.MessageId,
 		"raw_event":   event,
 	}
-	a.ctx.Events.Publish("adapter.message", payload)
+	a.ctx.Events.Publish("adapter.raw.message", payload)
 }
 
 func (a *OnebotAdapter) handleFriendRecall(event Pichubot.FriendRecall) {
@@ -170,7 +170,7 @@ func (a *OnebotAdapter) handleFriendRecall(event Pichubot.FriendRecall) {
 		"message_id": event.MessageId,
 		"raw_event":  event,
 	}
-	a.ctx.Events.Publish("adapter.message", payload)
+	a.ctx.Events.Publish("adapter.raw.message", payload)
 }
 
 func (a *OnebotAdapter) handleNotify(event Pichubot.Notify) {
@@ -186,7 +186,7 @@ func (a *OnebotAdapter) handleNotify(event Pichubot.Notify) {
 		"honor_type": event.Honor_type, // 仅荣誉事件有值
 		"raw_event":  event,
 	}
-	a.ctx.Events.Publish("adapter.message", payload)
+	a.ctx.Events.Publish("adapter.raw.message", payload)
 }
 
 func (a *OnebotAdapter) handleFriendRequest(event Pichubot.FriendRequest) {
@@ -200,7 +200,7 @@ func (a *OnebotAdapter) handleFriendRequest(event Pichubot.FriendRequest) {
 		"flag":       event.Flag,
 		"raw_event":  event,
 	}
-	a.ctx.Events.Publish("adapter.message", payload)
+	a.ctx.Events.Publish("adapter.raw.message", payload)
 }
 
 func (a *OnebotAdapter) handleGroupRequest(event Pichubot.GroupRequest) {
@@ -216,7 +216,7 @@ func (a *OnebotAdapter) handleGroupRequest(event Pichubot.GroupRequest) {
 		"flag":       event.Flag,
 		"raw_event":  event,
 	}
-	a.ctx.Events.Publish("adapter.message", payload)
+	a.ctx.Events.Publish("adapter.raw.message", payload)
 }
 
 func (a *OnebotAdapter) handleMetaLifecycle(event Pichubot.MetaLifecycle) {
@@ -227,7 +227,7 @@ func (a *OnebotAdapter) handleMetaLifecycle(event Pichubot.MetaLifecycle) {
 		"sub_type":   event.SubType, // enable / disable / connect
 		"raw_event":  event,
 	}
-	a.ctx.Events.Publish("adapter.message", payload)
+	a.ctx.Events.Publish("adapter.raw.message", payload)
 }
 
 func (a *OnebotAdapter) handleMetaHeartbeat(event Pichubot.MetaHeartbeat) {
@@ -239,5 +239,5 @@ func (a *OnebotAdapter) handleMetaHeartbeat(event Pichubot.MetaHeartbeat) {
 		"status":     event.Status,
 		"raw_event":  event,
 	}
-	a.ctx.Events.Publish("adapter.message", payload)
+	a.ctx.Events.Publish("adapter.raw.message", payload)
 }
