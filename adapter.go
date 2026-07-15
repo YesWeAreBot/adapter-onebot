@@ -35,6 +35,7 @@ func (a *OnebotAdapter) Init(ctx *core.SystemContext) error {
 		Host:     a.conf.Host,
 		Path:     a.conf.Path,
 		MsgAwait: a.conf.MsgAwait,
+		Token:    a.conf.Token,
 	}
 
 	// 注册事件桥接

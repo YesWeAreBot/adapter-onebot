@@ -8,6 +8,8 @@ github.com/go-viper/mapstructure/v2 v2.4.0 h1:EBsztssimR/CONLSZZ04E8qAkxNYq4Qp9L
 github.com/go-viper/mapstructure/v2 v2.4.0/go.mod h1:oJDH3BJKyqBA2TXFhDsKDGDTlndYOZ6rGS0BRZIxGhM=
 github.com/gorilla/websocket v1.4.2 h1:+/TMaTYc4QFitKJxsQ7Yye35DkWvkdLcvGKqM+x0Ufc=
 github.com/gorilla/websocket v1.4.2/go.mod h1:YR8l580nyteQvAITg2hZ9XVh4b55+EU/adAjf1fMHhE=
+github.com/gorilla/websocket v1.5.3 h1:saDtZ6Pbx/0u+bgYQ3q96pZgCzfhKXGPqt7kZ72aNNg=
+github.com/gorilla/websocket v1.5.3/go.mod h1:YR8l580nyteQvAITg2hZ9XVh4b55+EU/adAjf1fMHhE=
 github.com/mailru/easyjson v0.7.0 h1:aizVhC/NAAcKWb+5QsU1iNOZb4Yws5UO2I+aIprQITM=
 github.com/mailru/easyjson v0.7.0/go.mod h1:KAzv3t3aY1NaHWoQz1+4F1ccyAH66Jk7yos7ldAVICs=
 github.com/mattn/go-colorable v0.1.4 h1:snbPLB8fVfU9iwbbo30TPtbLRzwWu6aJS6Xh4eaaviA=
@@ -35,6 +37,8 @@ github.com/subosito/gotenv v1.6.0 h1:9NlTDc1FTs4qu0DDq7AEtTPNw6SVm7uBMsUCUjABIf8
 github.com/subosito/gotenv v1.6.0/go.mod h1:Dk4QP5c2W3ibzajGcXpNraDfq2IrhjMIvMSWPKKo0FU=
 github.com/yeswearebot/go-Pichubot v0.3.8 h1:MkHFNy5ba85tIwGCpchlE1790IDOcEArXIIFdMx18zg=
 github.com/yeswearebot/go-Pichubot v0.3.8/go.mod h1:Lp6tFdXwWssv00ZrjBMejI2Zo5sEQObWVDdciUlzqmo=
+github.com/yeswearebot/go-Pichubot v0.3.9 h1:EjFnQWlEBHxk8zwN/qFHboXrej4A/6ZxHnZVU02I/oM=
+github.com/yeswearebot/go-Pichubot v0.3.9/go.mod h1:zHp17hNIeELi8YROksS7JKRha1bxsftoi3/0JKtdN9Y=
 github.com/yeswearebot/plugin_config v0.0.0-20260715062753-d8408ae24c3b h1:sH3cd6ynqNCJjYuf/iemc6h2plToQvlAr+Lv7lW3xbs=
 github.com/yeswearebot/plugin_config v0.0.0-20260715062753-d8408ae24c3b/go.mod h1:LrWCOqdvBA8YCZzoJVYpCYNsWDlTJsHJ1AAEel2EzM4=
 github.com/yeswearebot/yes-core v0.1.0 h1:F4OAkwCS7QGroHE0rSJuSTuyKH3EMQuwVdaqYBNh9bk=
