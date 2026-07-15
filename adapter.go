@@ -3,7 +3,7 @@ package adapter_onebot
 import (
 	"fmt"
 
-	Pichubot "github.com/0ojixueseno0/go-Pichubot"
+	Pichubot "github.com/yeswearebot/go-Pichubot"
 	"github.com/yeswearebot/plugin_config"
 	"github.com/yeswearebot/yes-core/core"
 )

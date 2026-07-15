@@ -1,7 +1,7 @@
 package adapter_onebot
 
 import (
-	Pichubot "github.com/0ojixueseno0/go-Pichubot"
+	Pichubot "github.com/yeswearebot/go-Pichubot"
 )
 
 // 向底层驱动注册监听器
