@@ -30,35 +30,32 @@ func (a *OnebotAdapter) registerEventListeners() {
 	Pichubot.Listeners.OnMetaHeartbeat = append(Pichubot.Listeners.OnMetaHeartbeat, a.handleMetaHeartbeat)
 }
 
-// 处理群消息
 func (a *OnebotAdapter) handleGroupMsg(event Pichubot.MessageGroup) {
-	// 构造通用的消息事件载荷 (与平台无关)
 	payload := map[string]any{
-		"platform":  "onebot",
-		"scene":     "group",       // 场景: group / private
-		"scene_id":  event.GroupID, // 场景 ID: 群号 / QQ号
-		"user_id":   event.UserID,  // 发送者 ID
-		"nickname":  event.Sender.Nickname,
-		"message":   event.Message, // 消息内容 (包含 CQ 码)
-		"raw_event": event,         // 保留原始事件
+		"platform":   "onebot",
+		"event_type": "group_msg",
+		"scene":      "group",
+		"scene_id":   event.GroupID,
+		"user_id":    event.UserID,
+		"nickname":   event.Sender.Nickname,
+		"message":    event.Message,
+		"raw_event":  event,
 	}
-
-	// 发布到 yes-core 事件总线，主题统一为 adapter.message
 	a.ctx.Events.Publish("adapter.message", payload)
 }
 
 // 处理私聊消息
 func (a *OnebotAdapter) handlePrivateMsg(event Pichubot.MessagePrivate) {
 	payload := map[string]any{
-		"platform":  "onebot",
-		"scene":     "private",
-		"scene_id":  event.UserID,
-		"user_id":   event.UserID,
-		"nickname":  event.Sender.Nickname,
-		"message":   event.Message,
-		"raw_event": event,
+		"platform":   "onebot",
+		"event_type": "private_msg",
+		"scene":      "private",
+		"scene_id":   event.UserID,
+		"user_id":    event.UserID,
+		"nickname":   event.Sender.Nickname,
+		"message":    event.Message,
+		"raw_event":  event,
 	}
-
 	a.ctx.Events.Publish("adapter.message", payload)
 }
 
