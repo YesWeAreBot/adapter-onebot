@@ -39,6 +39,7 @@ func (a *OnebotAdapter) handleGroupMsg(event Pichubot.MessageGroup) {
 		"user_id":     event.UserID,
 		"nickname":    event.Sender.Nickname,
 		"message":     event.Message,
+		"message_id":  event.MessageID,
 		"raw_message": event.RawMessage,
 		"raw_event":   event,
 	}
@@ -55,6 +56,7 @@ func (a *OnebotAdapter) handlePrivateMsg(event Pichubot.MessagePrivate) {
 		"user_id":     event.UserID,
 		"nickname":    event.Sender.Nickname,
 		"message":     event.Message,
+		"message_id":  event.MessageID,
 		"raw_message": event.RawMessage,
 		"raw_event":   event,
 	}

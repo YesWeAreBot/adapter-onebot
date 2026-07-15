@@ -120,3 +120,15 @@ func (a *OnebotAdapter) GetImage(file string) (map[string]interface{}, error) {
 func (a *OnebotAdapter) OCRImage(imageFile string) (map[string]interface{}, error) {
 	return Pichubot.OCRImage(imageFile)
 }
+
+func (a *OnebotAdapter) GetGroupInfo(groupID int64, noCache bool) (map[string]interface{}, error) {
+	return Pichubot.GetGroupInfo(groupID, noCache)
+}
+
+func (a *OnebotAdapter) GetGroupMemberInfo(groupID, userID int64, noCache bool) (map[string]interface{}, error) {
+	return Pichubot.GetGroupMemberInfo(groupID, userID, noCache)
+}
+
+func (a *OnebotAdapter) GetGroupMemberList(groupID int64) (map[string]interface{}, error) {
+	return Pichubot.GetGroupMemberList(groupID)
+}
