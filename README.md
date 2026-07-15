@@ -83,7 +83,7 @@ func (p *MyPlugin) Name() string        { return "my-plugin" }
 func (p *MyPlugin) DependsOn() []string { return []string{"adapter-onebot"} } // 确保适配器先启动
 
 func (p *MyPlugin) Init(ctx *core.SystemContext) error {
-    ctx.Events.Subscribe("adapter.message", func(payload any) {
+    ctx.Events.Subscribe("adapter.raw.message", func(payload any) {
         data, ok := payload.(map[string]any)
         if !ok { return }
 
