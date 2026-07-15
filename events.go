@@ -32,14 +32,15 @@ func (a *OnebotAdapter) registerEventListeners() {
 
 func (a *OnebotAdapter) handleGroupMsg(event Pichubot.MessageGroup) {
 	payload := map[string]any{
-		"platform":   "onebot",
-		"event_type": "group_msg",
-		"scene":      "group",
-		"scene_id":   event.GroupID,
-		"user_id":    event.UserID,
-		"nickname":   event.Sender.Nickname,
-		"message":    event.Message,
-		"raw_event":  event,
+		"platform":    "onebot",
+		"event_type":  "group_msg",
+		"scene":       "group",
+		"scene_id":    event.GroupID,
+		"user_id":     event.UserID,
+		"nickname":    event.Sender.Nickname,
+		"message":     event.Message,
+		"raw_message": event.RawMessage,
+		"raw_event":   event,
 	}
 	a.ctx.Events.Publish("adapter.raw.message", payload)
 }
@@ -47,14 +48,15 @@ func (a *OnebotAdapter) handleGroupMsg(event Pichubot.MessageGroup) {
 // 处理私聊消息
 func (a *OnebotAdapter) handlePrivateMsg(event Pichubot.MessagePrivate) {
 	payload := map[string]any{
-		"platform":   "onebot",
-		"event_type": "private_msg",
-		"scene":      "private",
-		"scene_id":   event.UserID,
-		"user_id":    event.UserID,
-		"nickname":   event.Sender.Nickname,
-		"message":    event.Message,
-		"raw_event":  event,
+		"platform":    "onebot",
+		"event_type":  "private_msg",
+		"scene":       "private",
+		"scene_id":    event.UserID,
+		"user_id":     event.UserID,
+		"nickname":    event.Sender.Nickname,
+		"message":     event.Message,
+		"raw_message": event.RawMessage,
+		"raw_event":   event,
 	}
 	a.ctx.Events.Publish("adapter.raw.message", payload)
 }
