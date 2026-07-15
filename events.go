@@ -32,7 +32,7 @@ func (a *OnebotAdapter) registerEventListeners() {
 
 func (a *OnebotAdapter) handleGroupMsg(event Pichubot.MessageGroup) {
 	payload := map[string]any{
-		"platform":    "onebot",
+		"platform":    "adapter-onebot",
 		"event_type":  "group_msg",
 		"scene":       "group",
 		"scene_id":    event.GroupID,
@@ -48,7 +48,7 @@ func (a *OnebotAdapter) handleGroupMsg(event Pichubot.MessageGroup) {
 // 处理私聊消息
 func (a *OnebotAdapter) handlePrivateMsg(event Pichubot.MessagePrivate) {
 	payload := map[string]any{
-		"platform":    "onebot",
+		"platform":    "adapter-onebot",
 		"event_type":  "private_msg",
 		"scene":       "private",
 		"scene_id":    event.UserID,
@@ -63,7 +63,7 @@ func (a *OnebotAdapter) handlePrivateMsg(event Pichubot.MessagePrivate) {
 
 func (a *OnebotAdapter) handleGroupUpload(event Pichubot.GroupUpload) {
 	payload := map[string]any{
-		"platform":   "onebot",
+		"platform":   "adapter-onebot",
 		"event_type": "group_upload",
 		"scene":      "group",
 		"group_id":   event.GroupId,
@@ -77,7 +77,7 @@ func (a *OnebotAdapter) handleGroupUpload(event Pichubot.GroupUpload) {
 
 func (a *OnebotAdapter) handleGroupAdmin(event Pichubot.GroupAdmin) {
 	payload := map[string]any{
-		"platform":   "onebot",
+		"platform":   "adapter-onebot",
 		"event_type": "group_admin",
 		"scene":      "group",
 		"group_id":   event.GroupId,
@@ -91,7 +91,7 @@ func (a *OnebotAdapter) handleGroupAdmin(event Pichubot.GroupAdmin) {
 
 func (a *OnebotAdapter) handleGroupDecrease(event Pichubot.GroupDecrease) {
 	payload := map[string]any{
-		"platform":    "onebot",
+		"platform":    "adapter-onebot",
 		"event_type":  "group_decrease",
 		"scene":       "group",
 		"group_id":    event.GroupId,
@@ -106,7 +106,7 @@ func (a *OnebotAdapter) handleGroupDecrease(event Pichubot.GroupDecrease) {
 
 func (a *OnebotAdapter) handleGroupIncrease(event Pichubot.GroupIncrease) {
 	payload := map[string]any{
-		"platform":    "onebot",
+		"platform":    "adapter-onebot",
 		"event_type":  "group_increase",
 		"scene":       "group",
 		"group_id":    event.GroupId,
@@ -121,7 +121,7 @@ func (a *OnebotAdapter) handleGroupIncrease(event Pichubot.GroupIncrease) {
 
 func (a *OnebotAdapter) handleGroupBan(event Pichubot.GroupBan) {
 	payload := map[string]any{
-		"platform":    "onebot",
+		"platform":    "adapter-onebot",
 		"event_type":  "group_ban",
 		"scene":       "group",
 		"group_id":    event.GroupId,
@@ -137,7 +137,7 @@ func (a *OnebotAdapter) handleGroupBan(event Pichubot.GroupBan) {
 
 func (a *OnebotAdapter) handleFriendAdd(event Pichubot.FriendAdd) {
 	payload := map[string]any{
-		"platform":   "onebot",
+		"platform":   "adapter-onebot",
 		"event_type": "friend_add",
 		"scene":      "private",
 		"user_id":    event.UserId,
@@ -149,7 +149,7 @@ func (a *OnebotAdapter) handleFriendAdd(event Pichubot.FriendAdd) {
 
 func (a *OnebotAdapter) handleGroupRecall(event Pichubot.GroupRecall) {
 	payload := map[string]any{
-		"platform":    "onebot",
+		"platform":    "adapter-onebot",
 		"event_type":  "group_recall",
 		"scene":       "group",
 		"group_id":    event.GroupId,
@@ -164,7 +164,7 @@ func (a *OnebotAdapter) handleGroupRecall(event Pichubot.GroupRecall) {
 
 func (a *OnebotAdapter) handleFriendRecall(event Pichubot.FriendRecall) {
 	payload := map[string]any{
-		"platform":   "onebot",
+		"platform":   "adapter-onebot",
 		"event_type": "friend_recall",
 		"scene":      "private",
 		"user_id":    event.UserId,
@@ -177,7 +177,7 @@ func (a *OnebotAdapter) handleFriendRecall(event Pichubot.FriendRecall) {
 
 func (a *OnebotAdapter) handleNotify(event Pichubot.Notify) {
 	payload := map[string]any{
-		"platform":   "onebot",
+		"platform":   "adapter-onebot",
 		"event_type": "notify",
 		"scene":      "group", // Notify 均为群内事件
 		"group_id":   event.GroupId,
@@ -193,7 +193,7 @@ func (a *OnebotAdapter) handleNotify(event Pichubot.Notify) {
 
 func (a *OnebotAdapter) handleFriendRequest(event Pichubot.FriendRequest) {
 	payload := map[string]any{
-		"platform":   "onebot",
+		"platform":   "adapter-onebot",
 		"event_type": "friend_request",
 		"scene":      "private",
 		"user_id":    event.UserId,
@@ -207,7 +207,7 @@ func (a *OnebotAdapter) handleFriendRequest(event Pichubot.FriendRequest) {
 
 func (a *OnebotAdapter) handleGroupRequest(event Pichubot.GroupRequest) {
 	payload := map[string]any{
-		"platform":   "onebot",
+		"platform":   "adapter-onebot",
 		"event_type": "group_request",
 		"scene":      "group",
 		"group_id":   event.GroupId,
@@ -223,7 +223,7 @@ func (a *OnebotAdapter) handleGroupRequest(event Pichubot.GroupRequest) {
 
 func (a *OnebotAdapter) handleMetaLifecycle(event Pichubot.MetaLifecycle) {
 	payload := map[string]any{
-		"platform":   "onebot",
+		"platform":   "adapter-onebot",
 		"event_type": "meta_lifecycle",
 		"self_id":    event.SelfId,
 		"sub_type":   event.SubType, // enable / disable / connect
@@ -234,7 +234,7 @@ func (a *OnebotAdapter) handleMetaLifecycle(event Pichubot.MetaLifecycle) {
 
 func (a *OnebotAdapter) handleMetaHeartbeat(event Pichubot.MetaHeartbeat) {
 	payload := map[string]any{
-		"platform":   "onebot",
+		"platform":   "adapter-onebot",
 		"event_type": "meta_heartbeat",
 		"self_id":    event.SelfId,
 		"interval":   event.Interval,
